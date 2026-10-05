@@ -3,10 +3,11 @@ import { Country } from '../../models/country';
 import { CountryService } from '../../service/country.service';
 import { CountryList } from '../../components/country-list/country-list';
 import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-index',
-  imports: [CountryList, Header],
+  imports: [CountryList, Header, Footer],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
