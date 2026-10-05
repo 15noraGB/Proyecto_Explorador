@@ -1,3 +1,8 @@
-<h1>Country List funciona</h1>
+<p>lista-paises works!</p>
+<div class="country-list">
 
-<p>{{ countries().length }}</p>
+  @for (country of countries(); track country.code) {
+    <p>{{ country.name }}</p>
+  }
+
+</div>
