@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Country } from '../../models/country';
 
 @Component({
-  imports: [],
   selector: 'app-country-list',
-  styleUrl: './country-list.css',
+  imports: [],
   templateUrl: './country-list.html',
+  styleUrl: './country-list.css'
 })
 export class CountryList {
+
+  countries = input<Country[]>([]);
+
 }

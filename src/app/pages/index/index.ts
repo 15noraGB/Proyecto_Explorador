@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../models/country';
 import { CountryService } from '../../service/country.service';
+import { CountryList } from '../../components/country-list/country-list';
 
 @Component({
   selector: 'app-index',
-  imports: [],
+  imports: [CountryList],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
