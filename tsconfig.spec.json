@@ -12,5 +12,5 @@
   "include": [
     "src/**/*.d.ts",
     "src/**/*.spec.ts"
-  ]
+, "src/app/paginas/country-detail/country-detail.ts", "src/app/componentes/finder/finder.ts"  ]
 }

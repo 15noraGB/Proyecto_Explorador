@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DetallePais } from './detalle-pais';
+import { Footer } from './footer';
 
-describe('DetallePais', () => {
-  let component: DetallePais;
-  let fixture: ComponentFixture<DetallePais>;
+describe('Footer', () => {
+  let component: Footer;
+  let fixture: ComponentFixture<Footer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DetallePais]
+      imports: [Footer]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(DetallePais);
+    fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

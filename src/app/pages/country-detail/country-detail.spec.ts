@@ -1,17 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Cabecera } from './cabecera';
-
-describe('Cabecera', () => {
-  let component: Cabecera;
-  let fixture: ComponentFixture<Cabecera>;
+import { CountryDetail } from './country-detail';
+describe('CountryDetail', () => {
+  let component: CountryDetail;
+  let fixture: ComponentFixture<CountryDetail>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Cabecera]
+      imports: [CountryDetail]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(Cabecera);
+    fixture = TestBed.createComponent(CountryDetail);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
