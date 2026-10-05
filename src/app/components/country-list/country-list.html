@@ -1,8 +1,7 @@
-<p>lista-paises works!</p>
 <div class="country-list">
 
   @for (country of countries(); track country.code) {
-    <p>{{ country.name }}</p>
+    <app-country-card [country]="country"></app-country-card>
   }
 
 </div>

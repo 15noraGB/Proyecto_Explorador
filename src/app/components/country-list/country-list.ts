@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import { Country } from '../../models/country';
+import { CountryCard } from '../country-card/country-card';
 
 @Component({
   selector: 'app-country-list',
-  imports: [],
+  imports: [CountryCard],
   templateUrl: './country-list.html',
   styleUrl: './country-list.css'
 })
