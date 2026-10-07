@@ -1,6 +1,8 @@
 <app-header></app-header>
 
 <main>
+  <app-finder (search)="searchCountry($event)"></app-finder>
+
   <app-country-list [countries]="countries"></app-country-list>
 </main>
 

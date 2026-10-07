@@ -4,10 +4,11 @@ import { CountryService } from '../../service/country.service';
 import { CountryList } from '../../components/country-list/country-list';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
+import { Finder } from '../../components/finder/finder';
 
 @Component({
   selector: 'app-index',
-  imports: [CountryList, Header, Footer],
+  imports: [CountryList, Header, Footer, Finder],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
@@ -30,4 +31,8 @@ export class Index implements OnInit {
     });
   }
 
+  searchCountry(value: string) {
+    console.log('País buscado:', value);
+
+  }
 }
