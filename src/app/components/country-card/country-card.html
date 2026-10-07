@@ -1,4 +1,4 @@
-<div class="country-card">
+<a class="country-card" [routerLink]="['/country', country()?.code]">
 
   <span class="country-flag">{{ country()?.flag }}</span>
 
@@ -8,4 +8,4 @@
 
   <p>Población: {{ country()?.population }}</p>
 
-</div>
+</a>
