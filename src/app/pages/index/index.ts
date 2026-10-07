@@ -15,6 +15,7 @@ import { Finder } from '../../components/finder/finder';
 export class Index implements OnInit {
 
   countries: Country[] = [];
+  filteredCountries: Country[] = [];
 
   constructor(private countryService: CountryService) {
   }
@@ -23,6 +24,7 @@ export class Index implements OnInit {
     this.countryService.getCountries().subscribe({
       next: (countries) => {
         this.countries = countries;
+        this.filteredCountries = countries;
         console.log(this.countries);
       },
       error: (error) => {
@@ -32,8 +34,10 @@ export class Index implements OnInit {
   }
 
   searchCountry(value: string) {
-    console.log('País buscado:', value);
-  }
+    this.filteredCountries = this.countries.filter(country =>
+      country.name.toLowerCase().includes(value.toLowerCase())
+    ); 
+    }
 
 
 }
