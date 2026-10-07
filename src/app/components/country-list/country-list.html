@@ -1,5 +1,9 @@
 <div class="country-list">
 
+  @if (countries().length === 0) {
+    <p>No se encontraron países.</p>
+  }
+
   @for (country of countries(); track country.code) {
     <app-country-card [country]="country"></app-country-card>
   }
