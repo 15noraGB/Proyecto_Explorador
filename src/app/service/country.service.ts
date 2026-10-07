@@ -14,6 +14,12 @@ export class CountryService {
 
   getCountries() {
   return this.http.get<Country[]>(`${this.apiUrl}/countries`);
+  
+  }
+
+  getCountry(code: string){
+    return this.http.get<Country>(`${this.apiUrl}/countries/${code}`);
 }
 
 }
+
