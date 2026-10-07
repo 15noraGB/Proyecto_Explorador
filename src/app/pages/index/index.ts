@@ -33,6 +33,7 @@ export class Index implements OnInit {
 
   searchCountry(value: string) {
     console.log('País buscado:', value);
-
   }
+
+
 }

@@ -11,6 +11,7 @@ export class Finder {
   search = output<string>();
 
   searchCountry(value: string){
+    console.log('Finder:', value)
     this.search.emit(value);
   }
 
