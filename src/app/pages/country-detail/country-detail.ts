@@ -1,10 +1,11 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CountryService } from '../../service/country.service';
 import { Country } from '../../models/country';
 
+
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-country-detail',
   styleUrl: './country-detail.css',
   templateUrl: './country-detail.html',
