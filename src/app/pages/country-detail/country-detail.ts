@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountryService } from '../../service/country.service';
 import { Country } from '../../models/country';
@@ -13,26 +13,32 @@ export class CountryDetail {
 
   code: string = '';
   country?: Country;
-  
 
   constructor(
-  private route: ActivatedRoute,
-  private countryService: CountryService
-) {
-  this.code = this.route.snapshot.paramMap.get('code') || '';
+    private route: ActivatedRoute,
+    private countryService: CountryService,
+    private cdr: ChangeDetectorRef
+  ) {
 
-  console.log('Código del país:', this.code);
+    this.route.paramMap.subscribe(params => {
 
-  this.countryService.getCountry(this.code).subscribe({
-    next: (country) => {
-      this.country = country;
-      console.log('País recibido:', country);
-    },
-    error: (error) => {
-      console.error('Error al obtener el país:', error);
-    }
-  });
-}
+      this.code = params.get('code') || '';
 
+      console.log('Código del país:', this.code);
+
+      this.countryService.getCountry(this.code).subscribe({
+        next: (country) => {
+          this.country = country;
+          this.cdr.detectChanges();
+          console.log('País recibido:', country);
+        },
+        error: (error) => {
+          console.error('Error al obtener el país:', error);
+        }
+      });
+
+    });
+
+  }
 
 }

@@ -1,23 +1,6 @@
-@if (country) {
+<h1>Prueba pagina detalle</h1>
 
-  <div class="country-detail">
-
-    <span class="country-flag">{{ country.flag }}</span>
-
-    <h1>{{ country.name }}</h1>
-
-    <p><strong>Capital:</strong> {{ country.capital }}</p>
-
-    <p><strong>Población:</strong> {{ country.population }}</p>
-
-    <p><strong>Región:</strong> {{ country.region }}</p>
-
-    <p><strong>Subregión:</strong> {{ country.subregion }}</p>
-
-    <p><strong>Moneda:</strong> {{ country.currency }}</p>
-
-    <p><strong>Código telefónico:</strong> {{ country.callingCode }}</p>
-
-  </div>
-
-}
+<p>El componente countryDetail se está mostrando.</p>
+<p>Código del país: {{ code }}</p>
+<p>Nombre del país: {{ country?.name }}</p>
+<p>Capital: {{ country?.capital }}</p>
