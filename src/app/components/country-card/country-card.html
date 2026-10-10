@@ -9,6 +9,6 @@
 
   <p>Capital: {{ country()?.capital }}</p>
 
-  <p>Población: {{ country()?.population }}</p>
 
+  <p>Población: {{ country()?.population | number:'1.0-0' }}</p>
 </a>

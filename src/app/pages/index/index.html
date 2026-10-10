@@ -1,9 +1,10 @@
 <app-header></app-header>
 
-<main>
-  <app-finder (search)="searchCountry($event)"></app-finder>
+<app-finder (search)="searchCountry($event)"></app-finder>
 
-  <app-country-list [countries]="filteredCountries"></app-country-list>
-</main>
+<div class="show-all">
+  <button (click)="showAllCountries()">Mostrar todos</button>
+</div>
 
+<app-country-list [countries]="filteredCountries"></app-country-list>
 <app-footer></app-footer>

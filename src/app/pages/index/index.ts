@@ -39,5 +39,9 @@ export class Index implements OnInit {
     ); 
     }
 
+    
+showAllCountries() {
+  this.filteredCountries = [...this.countries];
+}
 
 }

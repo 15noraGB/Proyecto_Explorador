@@ -5,14 +5,18 @@
 
   <div class="country-detail">
 
-    <span class="country-flag">{{ country.flag }}</span>
 
+<img
+  class="country-flag"
+  [src]="'https://flagcdn.com/w160/' + country.code.toLowerCase() + '.png'"
+  [alt]="'Bandera de ' + country.name"
+>
     <h1>{{ country.name }}</h1>
 
     <p><strong>Capital:</strong> {{ country.capital }}</p>
 
-    <p><strong>Población:</strong> {{ country.population }}</p>
-
+    <p><strong>Población:</strong> {{ country.population | number:'1.0-0' }}</p>
+    
     <p><strong>Región:</strong> {{ country.region }}</p>
 
     <p><strong>Subregión:</strong> {{ country.subregion }}</p>

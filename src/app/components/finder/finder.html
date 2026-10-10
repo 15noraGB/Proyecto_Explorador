@@ -4,6 +4,8 @@
     type="text"
     placeholder="Buscar un país..."
     #searchInput
+    (keyup.enter)="searchCountry(searchInput.value)"
+
   >
 
   <button (click)="searchCountry(searchInput.value)">Buscar</button>

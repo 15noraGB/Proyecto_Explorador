@@ -1,0 +1,23 @@
+
+.show-all {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+
+.show-all button {
+  padding: 11px 20px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.show-all button:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
