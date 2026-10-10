@@ -1,0 +1,40 @@
+
+.country-detail {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.country-flag {
+  display: block;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.country-detail h1 {
+  margin-bottom: 25px;
+}
+
+.country-detail p {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.country-detail ul {
+  padding-left: 25px;
+}
+
+@media (max-width: 600px) {
+  .country-detail {
+    margin: 20px 12px;
+    padding: 20px;
+  }
+
+  .country-flag {
+    font-size: 55px;
+  }
+}
