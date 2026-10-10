@@ -1,0 +1,70 @@
+
+.finder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.finder input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.finder input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.finder input::placeholder {
+  color: #9ca3af;
+}
+
+.finder button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.finder button:hover {
+  background-color: #1d4ed8;
+}
+
+.finder button:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 480px) {
+  .finder {
+    gap: 8px;
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .finder input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .finder button {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

@@ -7,8 +7,9 @@ import { Country } from '../../models/country';
 @Component({
   imports: [RouterLink],
   selector: 'app-country-detail',
-  styleUrl: './country-detail.css',
   templateUrl: './country-detail.html',
+    styleUrl: './country-detail.css'
+
 })
 export class CountryDetail {
 

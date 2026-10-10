@@ -1,6 +1,9 @@
 <a class="country-card" [routerLink]="['/country', country()?.code]">
-
-  <span class="country-flag">{{ country()?.flag }}</span>
+<img
+  class="country-flag"
+  [src]="'https://flagcdn.com/w80/' + country()?.code?.toLowerCase() + '.png'"
+  [alt]="'Bandera de ' + country()?.name"
+>
 
   <h2>{{ country()?.name }}</h2>
 

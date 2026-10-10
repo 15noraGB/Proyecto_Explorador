@@ -1,52 +1,77 @@
 
 .country-detail {
-  max-width: 700px;
+  max-width: 750px;
   margin: 40px auto;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  background-color: white;
+  padding: 35px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background-color: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
   box-sizing: border-box;
 }
 
 .country-flag {
   display: block;
-  font-size: 70px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  font-size: 72px;
+  line-height: 1.2;
 }
 
 .country-detail h1 {
-  margin-bottom: 25px;
+  margin: 0 0 25px;
+  color: #1e3a8a;
+  font-size: 32px;
 }
 
 .country-detail p {
-  margin: 12px 0;
-  line-height: 1.5;
+  margin: 14px 0;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.country-detail p strong {
+  color: #1f2937;
 }
 
 .country-detail ul {
+  margin-top: 8px;
   padding-left: 25px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 20px;
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
   .country-detail {
     margin: 20px 12px;
-    padding: 20px;
+    padding: 22px;
   }
 
   .country-flag {
-    font-size: 55px;
+    font-size: 56px;
+  }
+
+  .country-detail h1 {
+    font-size: 26px;
+  }
+
+  .country-detail p {
+    font-size: 15px;
   }
 }
 
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}

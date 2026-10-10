@@ -7,6 +7,7 @@ import { Country } from '../../models/country';
   imports: [RouterLink],
   templateUrl: './country-card.html',
   styleUrl: './country-card.css'
+
 })
 export class CountryCard {
 
