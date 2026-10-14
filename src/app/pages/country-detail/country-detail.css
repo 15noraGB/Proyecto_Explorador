@@ -84,3 +84,16 @@
   object-fit: contain;
 }
 
+
+.status-message {
+  margin: 40px 20px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #b91c1c;
+}
+
+

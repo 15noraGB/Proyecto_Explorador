@@ -1,6 +1,16 @@
 
 <a routerLink="/" class="back-link">← Volver al buscador</a>
 
+
+@if (loading) {
+  <p class="status-message">Cargando información del país...</p>
+}
+
+@if (errorMessage) {
+  <p class="status-message error">{{ errorMessage }}</p>
+}
+
+
 @if (country) {
 
   <div class="country-detail">

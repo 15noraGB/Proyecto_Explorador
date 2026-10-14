@@ -16,6 +16,8 @@ export class CountryDetail {
 
   code: string = '';
   country?: Country;
+  loading: boolean =true;
+  errorMessage: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -32,10 +34,14 @@ export class CountryDetail {
       this.countryService.getCountry(this.code).subscribe({
         next: (country) => {
           this.country = country;
+          this.loading = false;
           this.cdr.detectChanges();
           console.log('País recibido:', country);
+        
         },
         error: (error) => {
+          this.errorMessage = 'No se ha podido cargar la información del país.';
+          this.loading = false;
           console.error('Error al obtener el país:', error);
         }
       });
