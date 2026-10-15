@@ -16,6 +16,7 @@ export class Index implements OnInit {
 
   countries: Country[] = [];
   filteredCountries: Country[] = [];
+  hasSearched = false;
 
   constructor(private countryService: CountryService) {
   }
@@ -34,10 +35,13 @@ export class Index implements OnInit {
   }
 
   searchCountry(value: string) {
+    this.hasSearched = true;
     this.filteredCountries = this.countries.filter(country =>
       country.name.toLowerCase().includes(value.toLowerCase())
     ); 
     }
+
+  
 
     
 showAllCountries() {

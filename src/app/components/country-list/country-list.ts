@@ -11,5 +11,5 @@ import { CountryCard } from '../country-card/country-card';
 export class CountryList {
 
   countries = input<Country[]>([]);
-
+  hasSearched = input<boolean>(false);
 }

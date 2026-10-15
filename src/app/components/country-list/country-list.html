@@ -1,6 +1,7 @@
 <div class="country-list">
 
-  @if (countries().length === 0) {
+
+  @if (hasSearched() && countries().length === 0) {
     <p>No se encontraron países.</p>
   }
 

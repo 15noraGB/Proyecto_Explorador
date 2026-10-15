@@ -6,5 +6,12 @@
   <button (click)="showAllCountries()">Mostrar todos</button>
 </div>
 
-<app-country-list [countries]="filteredCountries"></app-country-list>
+<app-country-list 
+[countries]="filteredCountries"
+[hasSearched]="hasSearched">
+
+</app-country-list>
+
+
+
 <app-footer></app-footer>
