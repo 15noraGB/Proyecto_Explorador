@@ -4,44 +4,56 @@
   height: 100%;
   box-sizing: border-box;
   padding: 24px;
-  border: 1px solid #305092;
-  border-radius: 16px;
-  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+
+  background: rgba(235, 245, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   color: #1f2937;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .country-card:hover {
   transform: translateY(-5px);
-  border-color: #93c5fd;
-  box-shadow: 0 10px 24px rgba(30, 58, 138, 0.12);
+  background: rgba(255, 255, 255, 0.93);
+  border-color: rgba(125, 211, 252, 0.9);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.25),
+    0 0 18px rgba(56, 189, 248, 0.12);
 }
 
 .country-card:focus-visible {
-  outline: 3px solid #2563eb;
+  outline: 3px solid #38bdf8;
   outline-offset: 3px;
 }
 
 .country-flag {
   display: block;
+  width: 80px;
+  height: auto;
   margin-bottom: 14px;
-  font-size: 48px;
-  line-height: 1.2;
+  object-fit: contain;
 }
 
 .country-card h2 {
   margin: 0 0 16px;
-  color: #1e3a8a;
+  color: #12305a;
   font-size: 21px;
   line-height: 1.3;
 }
 
 .country-card p {
   margin: 8px 0;
-  color: #4b5563;
+  color: #334b68;
   font-size: 15px;
   line-height: 1.5;
 }
@@ -51,19 +63,7 @@
     padding: 20px;
   }
 
-  .country-flag {
-    font-size: 42px;
-  }
-
   .country-card h2 {
     font-size: 19px;
   }
-}
-
-.country-flag {
-  display: block;
-  width: 80px;
-  height: auto;
-  margin-bottom: 14px;
-  object-fit: contain;
 }
