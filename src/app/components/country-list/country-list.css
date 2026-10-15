@@ -1,5 +1,6 @@
 .country-list {
   display: grid;
+  color: white;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
