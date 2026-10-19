@@ -1,4 +1,6 @@
 
+@import "leaflet/dist/leaflet.css";
+
 body {
   min-height: 100vh;
   background-color: #061426;

@@ -42,6 +42,7 @@
   height: auto;
   margin-bottom: 14px;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 .country-card h2 {

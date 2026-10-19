@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CountryService } from '../../service/country.service';
 import { DecimalPipe } from '@angular/common';
 import { Country } from '../../models/country';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   imports: [RouterLink, DecimalPipe],
@@ -20,6 +21,7 @@ export class CountryDetail {
     private route: ActivatedRoute,
     private countryService: CountryService,
     private cdr: ChangeDetectorRef,
+    private sanitizer: DomSanitizer
   ) {
     this.route.paramMap.subscribe((params) => {
       this.code = params.get('code') || '';
@@ -40,5 +42,10 @@ export class CountryDetail {
         },
       });
     });
+  }
+
+  getMapUrl(countryName: string): SafeResourceUrl {
+    const url = `https://maps.google.com/maps?q=${encodeURIComponent(countryName)}&t=&z=5&ie=UTF8&iwloc=&output=embed`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
