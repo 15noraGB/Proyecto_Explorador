@@ -1,0 +1,9 @@
+.favorites-page {
+  padding: 1.5rem;
+}
+
+.empty-message {
+  margin-top: 1rem;
+  color: #666;
+  font-style: italic;
+}

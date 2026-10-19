@@ -1,14 +1,26 @@
 <a class="country-card" [routerLink]="['/country', country()?.code]">
-<img
-  class="country-flag"
-  [src]="'https://flagcdn.com/w80/' + country()?.code?.toLowerCase() + '.png'"
-  [alt]="'Bandera de ' + country()?.name"
->
+
+  @if (country()) {
+    <button 
+      type="button" 
+      class="favorite-btn" 
+      [class.is-favorite]="favoriteService.isFavorite(country()!.code)"
+      (click)="toggleFavorite($event)"
+      aria-label="Añadir a favoritos"
+    >
+      {{ favoriteService.isFavorite(country()!.code) ? '❤️' : '🤍' }}
+    </button>
+  }
+
+  <img
+    class="country-flag"
+    [src]="'https://flagcdn.com/w80/' + country()?.code?.toLowerCase() + '.png'"
+    [alt]="'Bandera de ' + country()?.name"
+  >
 
   <h2>{{ country()?.name }}</h2>
 
   <p>Capital: {{ country()?.capital }}</p>
-
 
   <p>Población: {{ country()?.population | number:'1.0-0' }}</p>
 </a>

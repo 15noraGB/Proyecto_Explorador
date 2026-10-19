@@ -1,0 +1,9 @@
+<main class="favorites-page">
+  <h2>Tus Países Favoritos</h2>
+
+  @if (favoriteService.favorites().length === 0) {
+    <p class="empty-message">No tienes países guardados en favoritos aún.</p>
+  } @else {
+    <app-country-list [countries]="favoriteService.favorites()"></app-country-list>
+  }
+</main>

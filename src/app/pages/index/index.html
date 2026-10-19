@@ -1,17 +1,18 @@
-<app-header></app-header>
-
 <app-finder (search)="searchCountry($event)"></app-finder>
 
 <div class="show-all">
   <button (click)="showAllCountries()">Mostrar todos</button>
 </div>
 
-<app-country-list 
-[countries]="filteredCountries"
-[hasSearched]="hasSearched">
-
-</app-country-list>
-
-
+@if (isLoadingCountries) {
+  <p>Cargando países...</p>
+} @else if (countriesError) {
+  <p>{{ countriesError }}</p>
+} @else {
+  <app-country-list
+    [countries]="filteredCountries"
+    [hasSearched]="hasSearched">
+  </app-country-list>
+}
 
 <app-footer></app-footer>
