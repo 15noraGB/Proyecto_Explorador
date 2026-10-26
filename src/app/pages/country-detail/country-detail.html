@@ -32,10 +32,15 @@
 
     <p><strong>Código telefónico:</strong> {{ country.callingCode }}</p>
 
-    <!-- Contenedor del Globo 3D -->
-    <div class="globe-card">
-      <h2>Ubicación en el Globo 3D 🌍</h2>
-      <div #globeContainer class="globe-box"></div>
+    <!-- Mapa del país -->
+    <div class="map-section">
+      <h2>Ubicación en el mapa</h2>
+      <iframe
+        class="country-map"
+        [src]="getMapUrl(country.name)"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 }
