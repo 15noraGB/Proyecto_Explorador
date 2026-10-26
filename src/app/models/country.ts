@@ -10,4 +10,5 @@ export interface Country {
   currency: string;
   flag: string;
   callingCode: string;
+  latlng?: [number, number]; // <--- Añadir esto si falta
 }
