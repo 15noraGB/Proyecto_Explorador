@@ -10,4 +10,5 @@ import { ToastComponent } from '../toast/toast.component';
   templateUrl: './header.html',
 })
 export class Header {
+  
 }

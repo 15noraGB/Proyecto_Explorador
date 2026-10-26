@@ -50,7 +50,7 @@ export class FavoriteService {
     }
   }
 
-  private showToast(message: string): void {
+   showToast(message: string): void {
     this.toastMessage.set(message);
     setTimeout(() => {
       this.toastMessage.set(null); // Se oculta a los 3 segundos

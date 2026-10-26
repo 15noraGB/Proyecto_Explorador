@@ -1,0 +1,39 @@
+<a routerLink="/" class="back-link">← Volver al inicio</a>
+
+<div class="game-card">
+  <h1>Adivina la Bandera 🎯</h1>
+
+  @if (loading) {
+    <p class="status-message">Preparando el juego...</p>
+  } @else if (currentCountry) {
+    <!-- Marcadores de Puntuación -->
+    <div class="scoreboard">
+      <div class="score-badge">Puntos: <span>{{ score }}</span></div>
+      <div class="streak-badge">Racha: <span>🔥 {{ streak }}</span></div>
+    </div>
+
+    <!-- Bandera -->
+    <div class="flag-wrapper">
+      <img
+        [src]="'https://flagcdn.com/w320/' + currentCountry.code.toLowerCase() + '.png'"
+        [alt]="'¿De qué país es esta bandera?'"
+        class="game-flag"
+      />
+    </div>
+
+    <!-- Opciones de respuesta -->
+    <div class="options-grid">
+      @for (option of options; track option) {
+        <button
+          class="option-btn"
+          [class.correct]="selectedOption && option === currentCountry.name"
+          [class.wrong]="selectedOption === option && option !== currentCountry.name"
+          [disabled]="selectedOption !== null"
+          (click)="checkAnswer(option)"
+        >
+          {{ option }}
+        </button>
+      }
+    </div>
+  }
+</div>
