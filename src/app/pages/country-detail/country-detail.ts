@@ -45,7 +45,8 @@ export class CountryDetail {
   }
 
   getMapUrl(countryName: string): SafeResourceUrl {
-    const url = `https://maps.google.com/maps?q=${encodeURIComponent(countryName)}&t=&z=5&ie=UTF8&iwloc=&output=embed`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
+  const url = `https://maps.google.com/maps?q=${encodeURIComponent(countryName)}&t=h&z=4&ie=UTF8&iwloc=&output=embed`;
+  return this.sanitizer.bypassSecurityTrustResourceUrl(url);
 }
+}
+

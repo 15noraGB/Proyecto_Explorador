@@ -19,6 +19,7 @@
     "@angular/router": "^21.2.0",
     "globe.gl": "^2.46.2",
     "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.33.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -27,6 +28,7 @@
     "@angular/cli": "^21.2.24",
     "@angular/compiler-cli": "^21.2.0",
     "@types/leaflet": "^1.9.22",
+    "@types/mapbox-gl": "^3.4.1",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
