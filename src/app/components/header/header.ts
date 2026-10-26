@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ToastComponent } from '../toast/toast.component';
+
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, ToastComponent],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',

@@ -10,6 +10,9 @@ export class FavoriteService {
   // Signal con los datos guardados
   favorites = signal<Country[]>(this.getSavedFavorites());
 
+  // Signal para controlar el mensaje de la notificación flotante
+  toastMessage = signal<string | null>(null);
+
   private getSavedFavorites(): Country[] {
     const savedFavorites = localStorage.getItem(this.storageKey);
     if (!savedFavorites) return [];
@@ -38,5 +41,19 @@ export class FavoriteService {
       : [...currentFavorites, country];
 
     this.saveFavorites(updatedFavorites);
+
+    // Notificación emergente al usuario
+    if (alreadyFavorite) {
+      this.showToast(`❌ ${country.name} eliminado de favoritos`);
+    } else {
+      this.showToast(`⭐ ${country.name} añadido a favoritos`);
+    }
+  }
+
+  private showToast(message: string): void {
+    this.toastMessage.set(message);
+    setTimeout(() => {
+      this.toastMessage.set(null); // Se oculta a los 3 segundos
+    }, 3000);
   }
 }
