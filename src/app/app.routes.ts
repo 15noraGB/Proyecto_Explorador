@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: '', component: Index },
   { path: 'favorites', component: Favorites },
   { path: 'country/:code', component: CountryDetail },
+  { path: 'game', component: GameComponent },
   { path: '**', redirectTo: '' },
-  { path: 'game', component: GameComponent }
 ];
