@@ -15,6 +15,7 @@
       [src]="'https://flagcdn.com/w160/' + country.code.toLowerCase() + '.png'"
       [alt]="'Bandera de ' + country.name"
     >
+
     <h1>{{ country.name }}</h1>
 
     <p><strong>Capital:</strong> {{ country.capital }}</p>
@@ -32,15 +33,23 @@
 
     <p><strong>Código telefónico:</strong> {{ country.callingCode }}</p>
 
-    <!-- Mapa del país -->
     <div class="map-section">
       <h2>Ubicación en el mapa</h2>
-      <iframe
-        class="country-map"
-        [src]="getMapUrl(country.name)"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
+
+      @if (mapLoading) {
+        <p class="map-loading" role="status">Cargando mapa…</p>
+      }
+
+      @if (mapUrl) {
+        <iframe
+          class="country-map"
+          [src]="mapUrl"
+          (load)="onMapLoad()"
+          loading="lazy"
+          title="Mapa de {{ country.name }}"
+          allowfullscreen
+        ></iframe>
+      }
     </div>
   </div>
 }

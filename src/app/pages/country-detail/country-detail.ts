@@ -12,10 +12,12 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrl: './country-detail.css',
 })
 export class CountryDetail {
-  code: string = '';
+  code = '';
   country?: Country;
-  loading: boolean = true;
-  errorMessage: string = '';
+  loading = true;
+  errorMessage = '';
+  mapUrl?: SafeResourceUrl;
+  mapLoading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,28 +27,36 @@ export class CountryDetail {
   ) {
     this.route.paramMap.subscribe((params) => {
       this.code = params.get('code') || '';
-
-      console.log('Código del país:', this.code);
+      this.loading = true;
+      this.errorMessage = '';
+      this.country = undefined;
+      this.mapUrl = undefined;
+      this.mapLoading = true;
 
       this.countryService.getCountry(this.code).subscribe({
         next: (country) => {
           this.country = country;
+          this.mapUrl = this.getMapUrl(country.name);
           this.loading = false;
           this.cdr.detectChanges();
-          console.log('País recibido:', country);
         },
         error: (error) => {
           this.errorMessage = 'No se ha podido cargar la información del país.';
           this.loading = false;
           console.error('Error al obtener el país:', error);
+          this.cdr.detectChanges();
         },
       });
     });
   }
 
   getMapUrl(countryName: string): SafeResourceUrl {
-  const url = `https://maps.google.com/maps?q=${encodeURIComponent(countryName)}&t=h&z=4&ie=UTF8&iwloc=&output=embed`;
-  return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-}
-}
+    const url = `https://maps.google.com/maps?q=${encodeURIComponent(countryName)}&t=h&z=4&ie=UTF8&iwloc=&output=embed`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
+  onMapLoad(): void {
+    this.mapLoading = false;
+    this.cdr.detectChanges();
+  }
+}

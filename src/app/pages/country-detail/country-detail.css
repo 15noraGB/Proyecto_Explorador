@@ -1,4 +1,3 @@
-
 .country-detail {
   max-width: 750px;
   margin: 40px auto;
@@ -15,9 +14,10 @@
 
 .country-flag {
   display: block;
+  width: 120px;
+  height: auto;
   margin-bottom: 18px;
-  font-size: 72px;
-  line-height: 1.2;
+  object-fit: contain;
 }
 
 .country-detail h1 {
@@ -70,35 +70,6 @@
   outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
-  .country-detail {
-    margin: 20px 12px;
-    padding: 22px;
-  }
-
-  .country-flag {
-    font-size: 56px;
-  }
-
-  .country-detail h1 {
-    font-size: 26px;
-  }
-
-  .country-detail p {
-    font-size: 15px;
-  }
-}
-
-
-.country-flag {
-  display: block;
-  width: 120px;
-  height: auto;
-  margin-bottom: 18px;
-  object-fit: contain;
-}
-
-
 .status-message {
   margin: 40px 20px;
   text-align: center;
@@ -106,7 +77,7 @@
   font-size: 16px;
 }
 
-.error-message {
+.status-message.error {
   color: #b91c1c;
 }
 
@@ -115,9 +86,17 @@
 }
 
 .map-section h2 {
-  font-size: 1.3rem;
-  color: #12305a;
   margin-bottom: 1rem;
+  color: #12305a;
+  font-size: 1.3rem;
+}
+
+.map-loading {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #1e3a8a;
+  text-align: center;
 }
 
 .country-map {
@@ -128,6 +107,17 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 600px) {
+  .country-detail {
+    margin: 20px 12px;
+    padding: 22px;
+  }
 
+  .country-detail h1 {
+    font-size: 26px;
+  }
 
-
+  .country-detail p {
+    font-size: 15px;
+  }
+}

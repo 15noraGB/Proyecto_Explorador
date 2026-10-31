@@ -29,7 +29,6 @@ export class GameComponent implements OnInit {
   roundScore = 0;
   questionNumber = 1;
   totalQuestions = 5;
-  totalLifetimeScore = 0;
   highScore = 0;
 
   loading = true;
@@ -58,7 +57,6 @@ export class GameComponent implements OnInit {
   }
 
   private loadSavedStats(): void {
-    this.totalLifetimeScore = Number(localStorage.getItem('game_total_score') || 0);
     this.highScore = Number(localStorage.getItem('game_high_score') || 0);
   }
 
@@ -146,9 +144,6 @@ export class GameComponent implements OnInit {
 
   finishGame(): void {
     this.gameOver = true;
-
-    this.totalLifetimeScore += this.roundScore;
-    localStorage.setItem('game_total_score', this.totalLifetimeScore.toString());
 
     if (this.roundScore > this.highScore) {
       this.highScore = this.roundScore;

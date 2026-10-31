@@ -5,7 +5,6 @@
 
   <div class="global-stats">
     <span>🏆 Récord: <strong>{{ highScore }} pts</strong></span>
-    <span>⭐ Puntos Acumulados: <strong>{{ totalLifetimeScore }} pts</strong></span>
   </div>
 
   @if (loading) {
@@ -71,7 +70,11 @@
           </form>
 
           <div class="skip-container">
-            <button type="button" class="action-btn secondary" (click)="startNewGame()">
+            <button
+              type="button"
+              class="action-btn secondary"
+              (click)="startNewGame()"
+            >
               🎮 Jugar otra ronda sin enviar
             </button>
           </div>
@@ -91,7 +94,11 @@
           <p>Tu puntuación de esta ronda es {{ roundScore }} puntos.</p>
 
           <div class="modal-actions">
-            <button type="button" class="action-btn" (click)="startNewGame()">
+            <button
+              type="button"
+              class="action-btn"
+              (click)="startNewGame()"
+            >
               Sí, jugar otra
             </button>
             <button
@@ -110,7 +117,9 @@
       <div class="round-progress">
         Bandera <strong>{{ questionNumber }}</strong> de {{ totalQuestions }}
       </div>
-      <div class="current-score">Puntos ronda: <strong>{{ roundScore }}</strong></div>
+      <div class="current-score">
+        Puntos ronda: <strong>{{ roundScore }}</strong>
+      </div>
     </div>
 
     <div class="flag-wrapper">
