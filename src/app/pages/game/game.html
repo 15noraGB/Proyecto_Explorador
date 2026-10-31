@@ -1,17 +1,17 @@
 <a routerLink="/" class="back-link">← Volver al inicio</a>
 
 <div class="game-card">
-  <h1>Adivina la Bandera 🎯</h1>
+  <h1>Adivina la Bandera</h1>
 
   <div class="global-stats">
-    <span>🏆 Récord: <strong>{{ highScore }} pts</strong></span>
+    <span>Récord: <strong>{{ highScore }} pts</strong></span>
   </div>
 
   @if (loading) {
     <p class="status-message">Cargando banderas...</p>
   } @else if (gameOver) {
     <div class="game-over-screen">
-      <h2>¡Ronda completada! 🏁</h2>
+      <h2>¡Ronda completada!</h2>
       <p class="final-score">
         Has conseguido <span>{{ roundScore }}</span> de 50 puntos
       </p>
@@ -27,7 +27,7 @@
             </p>
           </div>
         } @else {
-          <h3>📩 Compartir mi récord por email</h3>
+          <h3>Compartir mi récord por email</h3>
 
           <form (submit)="onSubmitShare($event)" class="share-form">
             <div class="form-group">
@@ -75,7 +75,7 @@
               class="action-btn secondary"
               (click)="startNewGame()"
             >
-              🎮 Jugar otra ronda sin enviar
+              Jugar otra ronda sin enviar
             </button>
           </div>
         }
@@ -147,7 +147,7 @@
     @if (hasAnswered) {
       <div class="next-action-container">
         <button type="button" class="next-btn" (click)="nextQuestion()">
-          {{ questionNumber === totalQuestions ? 'Ver Resultados Finales 🏁' : 'Siguiente Bandera ➔' }}
+          {{ questionNumber === totalQuestions ? 'Ver Resultados Finales' : 'Siguiente Bandera ➔' }}
         </button>
       </div>
     }

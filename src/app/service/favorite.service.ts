@@ -44,9 +44,9 @@ export class FavoriteService {
 
     // Notificación emergente al usuario
     if (alreadyFavorite) {
-      this.showToast(`❌ ${country.name} eliminado de favoritos`);
+      this.showToast(`${country.name} eliminado de favoritos`);
     } else {
-      this.showToast(`⭐ ${country.name} añadido a favoritos`);
+      this.showToast(`${country.name} añadido a favoritos`);
     }
   }
 
