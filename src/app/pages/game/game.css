@@ -182,7 +182,6 @@
   transform: translateY(-2px);
 }
 
-/* Estilos para el Formulario con Signal Forms */
 .share-box {
   margin: 25px 0;
   padding: 20px;
@@ -272,9 +271,69 @@
   color: #1f2937;
 }
 
+.skip-container {
+  margin-top: 15px;
+}
+
+.action-btn.secondary {
+  background: transparent;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  box-shadow: none;
+}
+
+.action-btn.secondary:hover {
+  background: #eff6ff;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.replay-dialog {
+  width: min(100%, 420px);
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+  text-align: center;
+}
+
+.replay-dialog h2 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.replay-dialog p {
+  color: #374151;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 500px) {

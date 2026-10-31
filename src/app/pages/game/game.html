@@ -10,25 +10,27 @@
 
   @if (loading) {
     <p class="status-message">Cargando banderas...</p>
-  } 
-
-  @else if (gameOver) {
-    <!-- RESUMEN AL FINALIZAR LA RONDA -->
+  } @else if (gameOver) {
     <div class="game-over-screen">
       <h2>¡Ronda completada! 🏁</h2>
-      <p class="final-score">Has conseguido <span>{{ roundScore }}</span> de 50 puntos</p>
+      <p class="final-score">
+        Has conseguido <span>{{ roundScore }}</span> de 50 puntos
+      </p>
 
-      <!-- FORMULARIO O MENSAJE DE CONFIRMACIÓN CON SIGNALS -->
       <div class="share-box">
         @if (isSent()) {
           <div class="success-message">
-            <h3>✉️ ¡Resultado compartido!</h3>
-            <p>Se ha enviado tu récord a <strong>{{ shareModel().recipientEmail }}</strong> de parte de <strong>{{ shareModel().playerName }}</strong>.</p>
+            <h3>✉️ ¡Puntuación compartida con éxito!</h3>
+            <p>
+              Se ha enviado tu puntuación a
+              <strong>{{ shareModel().recipientEmail }}</strong>
+              de parte de <strong>{{ shareModel().playerName }}</strong>.
+            </p>
           </div>
         } @else {
           <h3>📩 Compartir mi récord por email</h3>
-          
-          <form (submit)="onSubmitShare()" class="share-form">
+
+          <form (submit)="onSubmitShare($event)" class="share-form">
             <div class="form-group">
               <input
                 [formField]="shareForm.playerName"
@@ -67,18 +69,47 @@
               Enviar Puntuación
             </button>
           </form>
+
+          <div class="skip-container">
+            <button type="button" class="action-btn secondary" (click)="startNewGame()">
+              🎮 Jugar otra ronda sin enviar
+            </button>
+          </div>
         }
       </div>
-
-      <button class="action-btn" (click)="startNewGame()">
-        🎮 Jugar otra ronda
-      </button>
     </div>
-  } 
 
-  @else if (currentCountry) {
+    @if (showReplayDialog()) {
+      <div class="modal-backdrop">
+        <section
+          class="replay-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="replay-title"
+        >
+          <h2 id="replay-title">¿Quieres jugar otra ronda?</h2>
+          <p>Tu puntuación de esta ronda es {{ roundScore }} puntos.</p>
+
+          <div class="modal-actions">
+            <button type="button" class="action-btn" (click)="startNewGame()">
+              Sí, jugar otra
+            </button>
+            <button
+              type="button"
+              class="action-btn secondary"
+              (click)="closeReplayDialog()"
+            >
+              Ahora no
+            </button>
+          </div>
+        </section>
+      </div>
+    }
+  } @else if (currentCountry) {
     <div class="game-header-info">
-      <div class="round-progress">Bandera <strong>{{ questionNumber }}</strong> de {{ totalQuestions }}</div>
+      <div class="round-progress">
+        Bandera <strong>{{ questionNumber }}</strong> de {{ totalQuestions }}
+      </div>
       <div class="current-score">Puntos ronda: <strong>{{ roundScore }}</strong></div>
     </div>
 
@@ -106,7 +137,7 @@
 
     @if (hasAnswered) {
       <div class="next-action-container">
-        <button class="next-btn" (click)="nextQuestion()">
+        <button type="button" class="next-btn" (click)="nextQuestion()">
           {{ questionNumber === totalQuestions ? 'Ver Resultados Finales 🏁' : 'Siguiente Bandera ➔' }}
         </button>
       </div>
