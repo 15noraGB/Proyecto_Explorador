@@ -166,4 +166,4 @@ export class GameComponent implements OnInit {
   }
 }
 
-/* Parte del código generado por Inteligencia Artificial */
+/* Lógica del código generado por Inteligencia Artificial */
