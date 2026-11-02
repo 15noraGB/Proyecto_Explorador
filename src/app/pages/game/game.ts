@@ -127,9 +127,9 @@ export class GameComponent implements OnInit {
 
     if (option === this.currentCountry.name) {
       this.roundScore += 10;
-      this.favoriteService.showToast('¡Correcto! 🎉 +10 pts');
+      this.favoriteService.showToast('¡Correcto! +10 pts');
     } else {
-      this.favoriteService.showToast(`❌ Era ${this.currentCountry.name}`);
+      this.favoriteService.showToast(`Era ${this.currentCountry.name}`);
     }
   }
 
@@ -157,7 +157,7 @@ export class GameComponent implements OnInit {
     submit(this.shareForm, async () => {
       this.isSent.set(true);
       this.showReplayDialog.set(true);
-      this.favoriteService.showToast('✉️ ¡Puntuación compartida con éxito!');
+      this.favoriteService.showToast('¡Puntuación compartida con éxito!');
     });
   }
 

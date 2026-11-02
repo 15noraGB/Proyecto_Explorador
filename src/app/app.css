@@ -1,0 +1,4 @@
+main {
+  width: min(1440px, calc(100% - 32px));
+  margin-inline: auto;
+}
