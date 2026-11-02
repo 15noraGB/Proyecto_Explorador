@@ -12,9 +12,12 @@ import { Finder } from '../../components/finder/finder';
   styleUrl: './index.css'
 })
 export class Index implements OnInit {
+  readonly initialCountryCount = 12;
+
   countries: Country[] = [];
   filteredCountries: Country[] = [];
   hasSearched = false;
+  showAll = false;
   isLoadingCountries = true;
   countriesError = '';
 
@@ -22,6 +25,14 @@ export class Index implements OnInit {
     private countryService: CountryService,
     private cdr: ChangeDetectorRef
   ) {}
+
+  get visibleCountries(): Country[] {
+    if (this.hasSearched || this.showAll) {
+      return this.filteredCountries;
+    }
+
+    return this.filteredCountries.slice(0, this.initialCountryCount);
+  }
 
   ngOnInit(): void {
     this.countryService.getCountries().subscribe({
@@ -41,14 +52,18 @@ export class Index implements OnInit {
   }
 
   searchCountry(value: string): void {
-    this.hasSearched = true;
-    this.filteredCountries = this.countries.filter(country =>
-      country.name.toLowerCase().includes(value.toLowerCase())
-    );
+    const query = value.trim().toLowerCase();
+
+    this.hasSearched = query.length > 0;
+    this.showAll = false;
+    this.filteredCountries = query
+      ? this.countries.filter(country =>
+          country.name.toLowerCase().includes(query)
+        )
+      : [...this.countries];
   }
 
-  showAllCountries(): void {
-    this.filteredCountries = [...this.countries];
-    this.hasSearched = false;
+  toggleCountries(): void {
+    this.showAll = !this.showAll;
   }
 }

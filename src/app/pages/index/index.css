@@ -1,4 +1,8 @@
 
+.loading-message {
+  color: #bae6fd;
+}
+
 .show-all {
   display: flex;
   justify-content: center;

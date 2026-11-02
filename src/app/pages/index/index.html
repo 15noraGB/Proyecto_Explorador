@@ -1,16 +1,20 @@
 <app-finder (search)="searchCountry($event)"></app-finder>
 
-<div class="show-all">
-  <button (click)="showAllCountries()">Mostrar todos</button>
-</div>
+@if (!hasSearched && countries.length > initialCountryCount) {
+  <div class="show-all">
+    <button (click)="toggleCountries()">
+      {{ showAll ? 'Mostrar menos' : 'Mostrar todos' }}
+    </button>
+  </div>
+}
 
 @if (isLoadingCountries) {
-  <p>Cargando países...</p>
+  <p class="loading-message">Cargando países...</p>
 } @else if (countriesError) {
   <p>{{ countriesError }}</p>
 } @else {
   <app-country-list
-    [countries]="filteredCountries"
+    [countries]="visibleCountries"
     [hasSearched]="hasSearched">
   </app-country-list>
 }
