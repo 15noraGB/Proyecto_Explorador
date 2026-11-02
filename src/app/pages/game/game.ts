@@ -165,3 +165,5 @@ export class GameComponent implements OnInit {
     this.showReplayDialog.set(false);
   }
 }
+
+/* Parte del código generado por Inteligencia Artificial */
